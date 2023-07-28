@@ -1,0 +1,158 @@
+body {
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+}
+body main .header {
+  position: relative;
+}
+body main .header .card-back {
+  position: absolute;
+  top: 28px;
+  left: 62px;
+  width: 80%;
+}
+body main .header .card-front {
+  position: absolute;
+  top: 121px;
+  left: 12px;
+  width: 80%;
+  box-shadow: 7px 23px 56px hsl(279, 6%, 55%);
+}
+body main .header .card-logo {
+  position: absolute;
+  top: 143px;
+  left: 27px;
+  width: 15%;
+}
+body main .header .card-output {
+  position: relative;
+  color: hsl(0, 0%, 100%);
+}
+body main .header .card-output .card-number-output {
+  position: absolute;
+  bottom: 12px;
+  left: 27px;
+}
+body main .header .card-output .card-holder-name {
+  position: absolute;
+  bottom: -18px;
+  left: 27px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+body main .header .card-output .card-expiry {
+  position: absolute;
+  bottom: -18px;
+  right: 81px;
+  font-size: 10px;
+}
+body main .header .card-output .card-cvv {
+  position: absolute;
+  bottom: 130px;
+  right: 45px;
+  font-size: 10px;
+}
+body main .header .desktop {
+  display: none;
+}
+body main form {
+  margin-top: 3rem;
+  padding: 1rem;
+}
+body main form .name label, body main form .card-number label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  color: hsl(278, 68%, 11%);
+  font-size: 12px;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+}
+body main form .name input, body main form .card-number input {
+  padding: 0.7rem;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 5px;
+}
+body main form .card-dets {
+  display: flex;
+  align-items: center;
+}
+body main form .card-dets .expiry-date label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  color: hsl(278, 68%, 11%);
+  font-size: 12px;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+}
+body main form .card-dets .expiry-date input {
+  width: 50%;
+  padding: 0.7rem;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 5px;
+}
+body main form .card-dets .expiry-date .numbers {
+  display: flex;
+}
+body main form .card-dets .expiry-date .month {
+  display: inline-block;
+}
+body main form .card-dets .expiry-date .year {
+  display: inline-block;
+}
+body main form .card-dets .cvv label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  color: hsl(278, 68%, 11%);
+  font-size: 12px;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+}
+body main form .card-dets .cvv input {
+  padding: 0.7rem;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 5px;
+}
+body main form .submit {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 0.9rem;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(278, 68%, 11%);
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+body main form .success img {
+  display: block;
+  margin: auto;
+}
+body main form .success h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  font-size: 2rem;
+  font-weight: 500;
+}
+body main form .success p {
+  text-align: center;
+  color: hsl(279, 6%, 55%);
+}
+body main form .success button {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 0.9rem;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(278, 68%, 11%);
+  border-radius: 8px;
+  font-size: 0.8rem;
+}/*# sourceMappingURL=main.css.map */
