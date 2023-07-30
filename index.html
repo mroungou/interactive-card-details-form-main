@@ -21,10 +21,10 @@
       <img src="./images/bg-card-front.png" class="card-front" alt="">
       <img src="./images/card-logo.svg" class="card-logo" alt="">
         <div class="card-output">
-          <div class="card-number-output">0000 0000 0000 0000</div>
-          <div class="card-holder-name">Jane Appleseed</div>
-          <div class="card-expiry">00/00</div>
-          <div class="card-cvv">000</div>
+          <div class="card-number-output" id="card-number-output">0000 0000 0000 0000</div>
+          <div class="card-holder-name" id="card-holder-name">Jane Appleseed</div>
+          <div class="card-expiry"><span id="month-output">00</span>/<span id="year-output">00</span></div>
+          <div class="card-cvv" id="card-cvv">000</div>
         </div>
     </div>
     <form action="" class="card-info" id="form">
@@ -36,16 +36,21 @@
         </div>
         <div class="card-number">
           <label for="card-number">Card Number</label>
-          <input type="number" id="card-number" placeholder="e.g. 1234 5678 9123 0000"></input>
+          <input type="text" id="card-number" placeholder="e.g. 1234 5678 9123 0000"></input>
           <div class="error"></div>
         </div>
         <div class="card-dets">
           <div class="expiry-date">
             <label for="expiry-date">Exp. Date (MM/YY)</label>
             <div class="numbers">
-              <div class="month"><input type="number" id="expiry-date-month" placeholder="MM"></input></div>
-              <div class="error"></div>
-              <div class="year"><input type="number" id="expiry-date" placeholder="YY"></input></div>
+              <div class="month">
+                <input type="number" id="expiry-date-month" placeholder="MM"></input>
+                <div class="error"></div>
+              </div>
+              <div class="year">
+                <input type="number" id="expiry-date" placeholder="YY"></input>
+                <div class="error"></div>
+              </div>
             </div>
           </div>
           <div class="cvv">

@@ -155,4 +155,11 @@ body main form .success button {
   border: 1px solid hsl(278, 68%, 11%);
   border-radius: 8px;
   font-size: 0.8rem;
+}
+
+.has-error input {
+  border: 1px hsl(0, 100%, 66%) solid !important;
+}
+.has-error .error {
+  color: hsl(0, 100%, 66%);
 }/*# sourceMappingURL=main.css.map */
