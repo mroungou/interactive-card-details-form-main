@@ -159,6 +159,79 @@ body main form .success button {
   border-radius: 8px;
   font-size: 0.8rem;
 }
+@media screen and (min-width: 1440px) {
+  body main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  body main input:hover, body main input:focus {
+    cursor: pointer;
+    border: 2px solid transparent;
+    -o-border-image: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) 1;
+       border-image: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) 1;
+  }
+  body main .header .card-front {
+    top: 231px;
+    left: 202px;
+    box-shadow: none;
+  }
+  body main .header .card-back {
+    top: 465px !important;
+    left: 285px;
+  }
+  body main .header .card-logo {
+    top: 256px;
+    left: 223px;
+  }
+  body main .header .card-output .card-number-output {
+    bottom: 517px;
+    left: 226px;
+    font-size: 1.9rem;
+    width: 100%;
+  }
+  body main .header .card-output .card-holder-name {
+    bottom: 475px;
+    left: 226px;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  body main .header .card-output .card-expiry {
+    bottom: 475px;
+    left: 522px;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  body main .header .card-output .card-cvv {
+    bottom: 322px;
+    left: 600px;
+    font-size: 14px;
+  }
+  body main .header .desktop {
+    display: block;
+  }
+  body main .header .mobile {
+    display: none;
+  }
+  body main form {
+    margin: 0;
+    padding: 18rem;
+  }
+  body main form .name input, body main form .card-number input {
+    margin-bottom: 0.5rem;
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+  body main form .card-dets {
+    margin-bottom: 0.5rem;
+  }
+  body main form .card-dets input {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+  body main .error {
+    font-size: 12px !important;
+  }
+}
 
 .has-error input {
   border: 1px hsl(0, 100%, 66%) solid !important;

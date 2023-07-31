@@ -6,6 +6,12 @@ $darkGrayishViolet: hsl(279, 6%, 55%);
 $veryDarkViolet: hsl(278, 68%, 11%);
 $red: hsl(0, 100%, 66%);
 
+$startColor:  hsl(249, 99%, 64%);
+$endColor: hsl(278, 94%, 30%);
+
+$borderLinearGradient: linear-gradient(to right, $startColor, $endColor);
+
+
 @mixin label {
     text-transform: uppercase;
     letter-spacing: 0.2ch;
@@ -166,6 +172,84 @@ body {
                     border-radius: 8px;
                     font-size: 0.8rem;
                 }
+            }
+        }
+    }
+    @media screen and (min-width: 1440px) {
+        main {
+            input:hover, input:focus {
+                cursor: pointer;
+                border: 2px solid transparent;
+                border-image: $borderLinearGradient 1;
+            }
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            .header {
+                .card-front {
+                    top: 231px;
+                    left: 202px;
+                    box-shadow: none;
+                }
+                .card-back {
+                    top: 465px !important;
+                    left: 285px;
+                }
+                .card-logo {
+                    top: 256px;
+                    left: 223px
+                }
+                .card-output {
+                    .card-number-output {
+                        bottom: 517px;
+                        left: 226px;
+                        font-size: 1.9rem;
+                        width: 100%;
+                    }
+                    .card-holder-name {
+                        bottom: 475px;
+                        left: 226px;
+                        font-size: 0.8rem;
+                        width: 100%;
+                    }
+                    .card-expiry {
+                        bottom: 475px;
+                        left: 522px;
+                        font-size: 0.8rem;
+                        width: 100%;
+                    }
+                    .card-cvv {
+                        bottom: 322px;
+                        left: 600px;
+                        font-size: 14px;
+                }
+                }
+                .desktop {
+                    display: block;
+                }
+                .mobile {
+                    display: none;
+                }
+            }
+            form {
+                margin: 0;
+                padding: 18rem;
+                .name, .card-number {
+                    input {
+                        margin-bottom: 0.5rem;
+                        padding: 0.9rem;
+                        font-size: 1rem;
+                    }
+                }
+                .card-dets {
+                    margin-bottom: 0.5rem;
+                    input {
+                        padding: 0.9rem;
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .error {
+                font-size: 12px !important;
             }
         }
     }
