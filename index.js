@@ -13,16 +13,30 @@ function isCVV(cvvNumber) {
 function validateCreditCard() {
     const creditCard = document.getElementById('card-number')
     const creditCardDet = document.getElementById('card-number-output');
-    const creditCardValue = creditCard.value.trim();
+    const creditCardValue = creditCard.value.trim().replace(/\s/g, '');
+
+    let newCreditCard = '';
+
+    for (let i = 0; i < creditCardValue.length; i++) {
+        // adding space if modulus 4 is 0
+        if (i % 4 === 0 && i > 0) {
+            newCreditCard = newCreditCard.concat(' ');
+        }
+        newCreditCard = newCreditCard.concat(creditCardValue[i]);
+    }
     
-    creditCardDet.innerText = creditCardValue;
+    creditCard.value = newCreditCard;
+    creditCardDet.innerText = newCreditCard;
 
     if (creditCard.value === '') {
         setError(creditCard, 'Card Number cannot be blank')
+        return false;
     } else if (!isCreditCard(creditCardValue)) {
         setError(creditCard, 'Wrong format, numbers only')
+        return false;
     } else {
         setNoError(creditCard)
+        return true;
     }
 }
 
@@ -35,10 +49,13 @@ function validateCVV() {
     
     if (cvv.value === '') {
         setError(cvv, "Can't be blank")
+        return false;
     } else if(!isCVV(cvvValue)) {
         setError(cvv, 'Wrong format')
+        return false;
     } else {
         setNoError(cvv)
+        return true;
     }
 }
 
@@ -51,29 +68,36 @@ function validateMonth() {
 
     if (monthValue === '') {
         setError(month, 'Can\'t be blank');
+        return false;
     } else if (monthValue <= 0 || monthValue > 12) {
-        setError(month, "Enter a valid month");
+        setError(month, "Invalid month");
+        return false;
     } else {
         setNoError(month);
+        return true;
     }
 }
 
 function validateYear() {
     const year = document.getElementById('expiry-date');
     const yearOutput = document.getElementById('year-output');
-    const currentYear = new Date().getFullYear;
+    const currentYear = new Date().getFullYear().toString().slice(2,4);
 
     const yearValue = year.value.trim();
     yearOutput.innerText = yearValue;
 
     if (yearValue === '') {
         setError(year, "Can't be blank")
-    } else if (yearValue <= 0) {
+        return false;
+    } else if (parseInt(yearValue) <= 0) {
         setError(year, 'Invalid year')
-    } else if (yearValue < currentYear) {
+        return false;
+    } else if (parseInt(yearValue) < parseInt(currentYear)) {
         setError(year, "Card has expired")
+        return false;
     } else {
         setNoError(year);
+        return true;
     }
 }
 
@@ -82,10 +106,12 @@ function cardHolderName() {
     const nameFieldValue = nameField.value.trim();
     const nameOnCard = document.getElementById('card-holder-name');
     if (nameFieldValue === '') {
-        setError(nameField, "Can't be black")
+        setError(nameField, "Can't be blank")
+        return false;
     } else {
         setNoError(nameField);
         nameOnCard.innerText = nameFieldValue;
+        return true;
     }
 }
 
@@ -109,9 +135,25 @@ function setNoError(element) {
 
 window.addEventListener('DOMContentLoaded', function() {
     const form = this.document.getElementById('form')
+    const inputs = this.document.getElementById('inputs');
+    const success = this.document.getElementById('success')
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
+        
+        // validate each field 
+        
+        const isNameValid = cardHolderName();
+        const isCreditCardValid = validateCreditCard();
+        const isCVVValid = validateCVV();
+        const isMonthFieldValid = validateMonth();
+        const isYearValid = validateYear();
+        
+        if (isNameValid && isCreditCardValid && isCVVValid && isMonthFieldValid && isYearValid) {
+            inputs.classList.add('hidden');
+            success.classList.add('visible');
+            // form.submit();
+        }
     })
 
     const nameField = document.getElementById('name');

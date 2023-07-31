@@ -77,7 +77,6 @@ body main form .name input, body main form .card-number input {
 }
 body main form .card-dets {
   display: flex;
-  align-items: center;
 }
 body main form .card-dets .expiry-date label {
   display: block;
@@ -129,6 +128,10 @@ body main form .submit {
   border-radius: 8px;
   font-size: 0.8rem;
 }
+body main form .success {
+  padding-top: 3rem;
+  display: none;
+}
 body main form .success img {
   display: block;
   margin: auto;
@@ -161,5 +164,17 @@ body main form .success button {
   border: 1px hsl(0, 100%, 66%) solid !important;
 }
 .has-error .error {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   color: hsl(0, 100%, 66%);
+  font-size: 10px;
+  height: 13px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
 }/*# sourceMappingURL=main.css.map */
