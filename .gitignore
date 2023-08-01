@@ -11,9 +11,8 @@
 ###############################################
 *.xd
 style-guide.md
-README.md
+dets.md
 design
-README-template.md
 
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
